@@ -43,6 +43,10 @@ class MainScreen extends StatelessWidget {
               separatorBuilder: (context, index) => const Divider(),
               itemCount: snapshot.data!.length,
             );
+          } else if (snapshot.hasError) {
+            return const Center(
+              child: Text('An error occurred while fetching data.'),
+            );
           } else {
             return const Center(
               child: CircularProgressIndicator(),
